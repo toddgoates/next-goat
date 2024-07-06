@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import {
   AiOutlineMail as EnvelopeIcon,
   AiOutlinePhone as PhoneIcon,
@@ -9,6 +10,11 @@ import {
 import IconLink from "@/components/IconLink";
 import Section from "@/components/Section";
 import ContactForm from "@/components/ContactForm";
+
+export const metadata: Metadata = {
+  title: "Todd Goates | Contact",
+  description: "Different ways to get in touch with Todd Goates",
+};
 
 export default function ContactPage() {
   return (
@@ -23,13 +29,6 @@ export default function ContactPage() {
                 touch by email or text or fill out the form below... or connect
                 with me on social media... or don't. It's your choice.
               </p>
-              {/* <Alert type="success">
-                  <h3 className="mb-4 text-2xl font-bold">Success!</h3>
-                  <p className="text-lg">
-                    Your message has been sent successfully! I'll get in touch
-                    with you shortly.
-                  </p>
-                </Alert> */}
               <ContactForm />
             </div>
             <div className="col-span-1">

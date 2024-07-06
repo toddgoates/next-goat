@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
+
 import ProjectCard from "@/components/ProjectCard";
 import Section from "@/components/Section";
 import { getProjects } from "@/lib/data";
+
+export const metadata: Metadata = {
+  title: "Todd Goates | Projects",
+  description:
+    "Some of the different web projects that Todd Goates has worked on",
+};
 
 export default function ProjectsPage() {
   const projects = getProjects();

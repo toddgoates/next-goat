@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { AiOutlineDownload as DownloadIcon } from "react-icons/ai";
 
 import AudioButton from "@/components/AudioButton";
@@ -6,6 +7,11 @@ import Section from "@/components/Section";
 import { getJobs, getSchooling, getSkills } from "@/lib/data";
 import IconLink from "@/components/IconLink";
 import InfoCard from "@/components/InfoCard";
+
+export const metadata: Metadata = {
+  title: "Todd Goates | About",
+  description: "All about Todd Goates: Skills, Work Experience, and Education",
+};
 
 export default function AboutPage() {
   const skills = getSkills();
