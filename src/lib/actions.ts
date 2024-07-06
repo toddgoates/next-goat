@@ -17,6 +17,13 @@ export async function sendMessage(
   const message = formData.get("message") as string;
   const honeypot = formData.get("phone") as string;
 
+  // Reset errors
+  const errors = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
   // Check honeypot
   if (honeypot) {
     return { message: "Thanks for submitting" };
@@ -24,35 +31,28 @@ export async function sendMessage(
 
   // Validate name
   if (typeof name === "string" && name.length === 0) {
-    return {
-      error: {
-        name: "Please enter your name",
-      },
-    };
+    errors.name = "Please enter your name";
   }
 
   if (typeof name === "string" && name.match(/https?:\/\//)) {
-    return {
-      error: {
-        name: "Sorry, I'm not accepting names with links in them at this time",
-      },
-    };
+    errors.name =
+      "Sorry, I'm not accepting names with links in them at this time";
   }
 
   // Validate email
   if (typeof email === "string") {
     if (email.length === 0) {
-      return { error: { email: "Please enter your email" } };
+      errors.email = "Please enter your email";
     }
 
     if (!/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,13})+$/.test(email)) {
-      return { error: { email: "Please enter a valid email" } };
+      errors.email = "Please enter a valid email";
     }
   }
 
   // Validate message
   if (typeof message === "string" && message.length < 2) {
-    return { error: { message: "Please enter a message" } };
+    errors.message = "Please enter a message";
   }
 
   if (
@@ -61,11 +61,13 @@ export async function sendMessage(
       message.match(/www\./) ||
       message.match(/\.com/))
   ) {
-    return {
-      error: {
-        message: "Sorry, I'm not accepting messages with links at this time",
-      },
-    };
+    errors.message =
+      "Sorry, I'm not accepting messages with links at this time";
+  }
+
+  // Return errors, if any
+  if (Object.values(errors).some((error) => error.length > 0)) {
+    return { error: errors };
   }
 
   // Send the message via contact form API

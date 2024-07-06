@@ -1,6 +1,6 @@
 "use client";
 
-import { useFormState } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 
 import Alert from "./Alert";
 import Label from "./Label";
@@ -21,6 +21,7 @@ const initialState = {
 
 export default function ContactForm() {
   const [state, formAction] = useFormState(sendMessage, initialState);
+  const { pending } = useFormStatus();
 
   return state?.message ? (
     <Alert type="success">
@@ -29,7 +30,7 @@ export default function ContactForm() {
     </Alert>
   ) : (
     <form action={formAction}>
-      <fieldset className="flex flex-col gap-4">
+      <fieldset className="flex flex-col gap-4" disabled={pending}>
         <div className="sm:flex sm:gap-8">
           <div className="w-full">
             <Label htmlFor="name">What's your name?</Label>
