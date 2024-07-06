@@ -1,16 +1,6 @@
 "use server";
 
-export async function sendMessage(
-  prevState: {
-    error: {
-      name: string;
-      email: string;
-      message: string;
-    };
-    message: string;
-  },
-  formData: FormData
-) {
+export async function sendMessage(prevState: any, formData: FormData) {
   // Get form values
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;

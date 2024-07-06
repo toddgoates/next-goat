@@ -10,17 +10,8 @@ import Textarea from "./Textarea";
 import InputError from "./InputError";
 import { sendMessage } from "@/lib/actions";
 
-const initialState = {
-  error: {
-    name: "",
-    email: "",
-    message: "",
-  },
-  message: "",
-};
-
 export default function ContactForm() {
-  const [state, formAction] = useFormState(sendMessage, initialState);
+  const [state, formAction] = useFormState(sendMessage, null);
   const { pending } = useFormStatus();
 
   return state?.message ? (
