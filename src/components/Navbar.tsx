@@ -17,7 +17,7 @@ export default function Navbar() {
       <Container>
         <>
           <div className="flex items-center justify-between p-5 ">
-            <Link href="/" className="flex items-center gap-4">
+            <Link href="/" prefetch className="flex items-center gap-4">
               <img
                 src="images/goat-logo.svg"
                 className="w-14 h-14"
@@ -29,6 +29,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/"
@@ -42,6 +43,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/about"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/about"
@@ -55,6 +57,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/projects"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/projects"
@@ -68,6 +71,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/contact"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/contact"
@@ -96,6 +100,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/"
@@ -109,6 +114,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/about"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/about"
@@ -122,6 +128,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/projects"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/projects"
@@ -135,6 +142,7 @@ export default function Navbar() {
               <li className="py-3">
                 <Link
                   href="/contact"
+                  prefetch
                   onClick={() => setIsOpen(false)}
                   className={`${
                     pathName === "/contact"

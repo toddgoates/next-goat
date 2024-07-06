@@ -45,7 +45,9 @@ export default function AboutPage() {
                 done.
               </p>
               <div className="clear-both"></div>
-              <ButtonLink href="/projects">View Projects</ButtonLink>
+              <ButtonLink href="/projects" prefetch>
+                View Projects
+              </ButtonLink>
             </div>
           </div>
         </>
