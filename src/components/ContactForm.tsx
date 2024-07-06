@@ -34,7 +34,7 @@ export default function ContactForm() {
         <div className="sm:flex sm:gap-8">
           <div className="w-full">
             <Label htmlFor="name">What's your name?</Label>
-            <Input name="name" />
+            <Input name="name" required />
             {state?.error?.name ? (
               <InputError message={state.error.name} />
             ) : (
@@ -43,7 +43,7 @@ export default function ContactForm() {
           </div>
           <div className="w-full">
             <Label htmlFor="email">What's your email?</Label>
-            <Input type="email" name="email" />
+            <Input type="email" name="email" required />
             {state?.error?.email ? (
               <InputError message={state.error.email} />
             ) : (
@@ -59,7 +59,7 @@ export default function ContactForm() {
         </div>
         <div>
           <Label htmlFor="message">What would you like to say?</Label>
-          <Textarea name="message"></Textarea>
+          <Textarea name="message" required></Textarea>
           {state?.error?.message ? (
             <InputError message={state.error.message} />
           ) : (
