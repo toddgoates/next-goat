@@ -2,9 +2,9 @@
 
 import Typist from "react-typist-component";
 
-import type { Words } from "@/lib/types";
+import type { Word } from "@/lib/types";
 
-export default function TypeWriter(props: { words: Array<Words> }) {
+export default function TypeWriter(props: { words: Array<Word> }) {
   const { words } = props;
 
   return (
