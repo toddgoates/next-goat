@@ -24,3 +24,12 @@ export interface Schooling {
   logo: string;
   website: string;
 }
+
+export interface Project {
+  name: string;
+  description: string;
+  link: string;
+  repoLink?: string;
+  image: string;
+  tech: Array<string>;
+}
