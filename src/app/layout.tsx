@@ -18,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full bg-gray-100">
       <head>
+        <meta name="theme-color" content="#a855f7" />
         <meta property="og:url" content="https://toddgoates.com" />
         <meta property="og:type" content="website" />
         <meta
