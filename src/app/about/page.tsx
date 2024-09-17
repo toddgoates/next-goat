@@ -22,13 +22,15 @@ export default function AboutPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-6 text-4xl sm:hidden">All about me</h2>
+          <h2 className="mb-6 text-4xl sm:hidden dark:text-gray-50">
+            All about me
+          </h2>
           <div className="flex flex-col md:flex-row md:gap-8">
             <div className="mx-auto text-center">
               <img
                 src="images/portrait.jpg"
                 alt="A professional headshot of Todd Goates: a dark-haired, caucasian male in his early thirties"
-                className="h-auto p-2 mb-6 mr-10 bg-gray-100 border border-gray-400 max-w-18 sm:max-w-72"
+                className="h-auto p-2 mb-6 mr-10 bg-gray-100 border border-gray-400 max-w-18 sm:max-w-72 dark:bg-black dark:border-black"
               />
             </div>
             <div>
@@ -65,7 +67,7 @@ export default function AboutPage() {
           <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {skills.map((skill) => (
               <li
-                className="p-3 text-lg font-semibold text-center shadow-lg bg-slate-200 text-slate-800"
+                className="p-3 text-lg font-semibold text-center shadow-lg bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-gray-50"
                 key={skill.text}
               >
                 {skill.text}

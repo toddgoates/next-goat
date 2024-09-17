@@ -17,7 +17,7 @@ export default function IconLink({
 
   return (
     <Tag
-      className="inline-flex items-center gap-1 ml-4 text-purple-500 align-bottom hover:text-purple-700"
+      className="inline-flex items-center gap-1 ml-4 text-purple-500 align-bottom hover:text-purple-700 dark:text-purple-400 dark:hover:text-purple-300 transition-colors duration-300"
       {...props}
     >
       {children}

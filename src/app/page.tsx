@@ -8,12 +8,14 @@ export default function HomePage() {
 
   return (
     <Jumbotron>
-      <h2 className="text-6xl">Hey, I'm Todd!</h2>
-      <h3 className="flex items-center justify-center gap-2 text-2xl sm:text-3xl">
+      <h2 className="text-6xl dark:text-gray-50">Hey, I'm Todd!</h2>
+      <h3 className="flex items-center justify-center gap-2 text-2xl sm:text-3xl dark:text-gray-50">
         <span>I am a</span>
         <TypeWriter words={words} />
       </h3>
-      <p className="text-lg">I love to build cool stuff with code</p>
+      <p className="text-lg dark:text-gray-50">
+        I love to build cool stuff with code
+      </p>
       <ButtonLink href="/about" prefetch>
         Learn More
       </ButtonLink>

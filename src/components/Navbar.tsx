@@ -12,7 +12,7 @@ export default function Navbar() {
   const pathName = usePathname();
 
   return (
-    <nav className="bg-white border-b border-gray-300">
+    <nav className="bg-white border-b border-gray-300 dark:bg-slate-800 dark:border-none">
       <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
       <Container>
         <>
@@ -20,18 +20,20 @@ export default function Navbar() {
             <Link href="/" prefetch className="flex items-center gap-4">
               <img
                 src="images/goat-logo.svg"
-                className="w-14 h-14"
+                className="w-14 h-14 dark:filter dark:invert"
                 alt="A stylistic goat logo"
               />
-              <h1 className="text-4xl font-bold text-gray-600">Todd Goates</h1>
+              <h1 className="text-4xl font-bold text-gray-600 dark:text-gray-50">
+                Todd Goates
+              </h1>
             </Link>
-            <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8">
+            <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8 dark:text-gray-50">
               <li className="py-3">
                 <Link
                   href="/"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -45,7 +47,7 @@ export default function Navbar() {
                   href="/about"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/about"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -59,7 +61,7 @@ export default function Navbar() {
                   href="/projects"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/projects"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -73,7 +75,7 @@ export default function Navbar() {
                   href="/contact"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/contact"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -88,21 +90,21 @@ export default function Navbar() {
               className="md:hidden"
               aria-label="Toggle menu"
             >
-              <MenuIcon className="text-2xl" />
+              <MenuIcon className="text-2xl dark:text-gray-50" />
             </button>
           </div>
           <div
-            className={`bg-gray-200 p-5 border-b border-gray-300 ${
+            className={`bg-gray-200 p-5 border-b border-gray-300 dark:bg-slate-700 ${
               isOpen ? "block md:hidden" : "hidden"
             }`}
           >
-            <ul className="text-lg text-gray-600">
+            <ul className="text-lg text-gray-600 dark:text-gray-50">
               <li className="py-3">
                 <Link
                   href="/"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -116,7 +118,7 @@ export default function Navbar() {
                   href="/about"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/about"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -130,7 +132,7 @@ export default function Navbar() {
                   href="/projects"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/projects"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
@@ -144,7 +146,7 @@ export default function Navbar() {
                   href="/contact"
                   prefetch
                   onClick={() => setIsOpen(false)}
-                  className={`${
+                  className={`transition-colors duration-300 ${
                     pathName === "/contact"
                       ? "text-purple-500 font-semibold"
                       : "font-semibold hover:text-purple-500"
