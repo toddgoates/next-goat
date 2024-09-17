@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import Navbar from "@/components/Navbar";
@@ -16,7 +17,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full dark">
+    <html lang="en" className="h-full" suppressHydrationWarning>
       <head>
         <meta name="theme-color" content="#a855f7" />
         <meta property="og:url" content="https://toddgoates.com" />
@@ -85,11 +86,13 @@ export default function RootLayout({
         />
       </head>
       <body className="h-full bg-gray-100 dark:bg-gray-700">
-        <div className="flex flex-col justify-between h-full">
-          <Navbar />
-          <main className="grow">{children}</main>
-          <Footer />
-        </div>
+        <ThemeProvider attribute="class">
+          <div className="flex flex-col justify-between h-full">
+            <Navbar />
+            <main className="grow">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

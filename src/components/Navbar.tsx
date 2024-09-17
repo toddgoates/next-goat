@@ -4,12 +4,15 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
+import { useTheme } from "next-themes";
+import { GoSun as SunIcon, GoMoon as MoonIcon } from "react-icons/go";
 
 import Container from "./Container";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const pathName = usePathname();
+  const { theme, setTheme } = useTheme();
 
   return (
     <nav className="bg-white border-b border-gray-300 dark:bg-slate-800 dark:border-none">
@@ -84,6 +87,26 @@ export default function Navbar() {
                   Contact
                 </Link>
               </li>
+              <li className="py-3">
+                {theme === "dark" ? (
+                  <button
+                    aria-label="Switch to light mode"
+                    className="mt-[1px]"
+                  >
+                    <MoonIcon
+                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      onClick={() => setTheme("light")}
+                    />
+                  </button>
+                ) : (
+                  <button aria-label="Switch to dark mode" className="mt-[1px]">
+                    <SunIcon
+                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      onClick={() => setTheme("dark")}
+                    />
+                  </button>
+                )}
+              </li>
             </ul>
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -154,6 +177,23 @@ export default function Navbar() {
                 >
                   Contact
                 </Link>
+              </li>
+              <li className="py-3">
+                {theme === "dark" ? (
+                  <button aria-label="Switch to light mode">
+                    <MoonIcon
+                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      onClick={() => setTheme("light")}
+                    />
+                  </button>
+                ) : (
+                  <button aria-label="Switch to dark mode">
+                    <SunIcon
+                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      onClick={() => setTheme("dark")}
+                    />
+                  </button>
+                )}
               </li>
             </ul>
           </div>
