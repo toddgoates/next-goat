@@ -32,7 +32,7 @@ export default function ContactPage() {
               <ContactForm />
             </div>
             <div className="col-span-1">
-              <div className="flex flex-col gap-4 p-5 bg-white shadow-lg">
+              <div className="flex flex-col gap-4 p-5 bg-white shadow-lg dark:bg-slate-800">
                 <IconLink href="mailto:todd@toddgoates.com">
                   <EnvelopeIcon /> todd@toddgoates.com
                 </IconLink>

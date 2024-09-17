@@ -12,7 +12,10 @@ export default function ProjectCard({
   reverse = false,
 }: ProjectCardProps) {
   return (
-    <div key={project.name} className="bg-white p-6 rounded shadow-lg">
+    <div
+      key={project.name}
+      className="bg-white p-6 rounded shadow-lg dark:bg-slate-800 dark:text-gray-50"
+    >
       <div className="flex flex-col gap-8 md:flex-row">
         <a
           href={project.link}

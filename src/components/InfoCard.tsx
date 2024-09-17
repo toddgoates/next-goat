@@ -16,7 +16,7 @@ export default function InfoCard({
   link,
 }: InfoCardProps) {
   return (
-    <li className="grid gap-2 items-center grid-cols-4 p-5 mb-4 shadow-lg bg-gray-50">
+    <li className="grid gap-2 items-center grid-cols-4 p-5 mb-4 shadow-lg bg-gray-50 dark:bg-slate-800 dark:text-gray-50">
       <div className="col-span-1">
         <img
           src={`images/${image}`}
@@ -33,7 +33,7 @@ export default function InfoCard({
         </h4>
         <div className="flex items-center justify-between">
           <p>{subtitle}</p>
-          <p className="text-gray-700">{dates}</p>
+          <p className="text-gray-700 dark:text-gray-100">{dates}</p>
         </div>
       </div>
     </li>

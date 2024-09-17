@@ -12,7 +12,9 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className={`py-12 ${background} ${color}`}>
+    <section
+      className={`py-12 ${background} ${color} dark:bg-gray-700 dark:text-gray-50`}
+    >
       <Container extraSpace>{children}</Container>
     </section>
   );
