@@ -16,7 +16,7 @@ export default function InfoCard({
   link,
 }: InfoCardProps) {
   return (
-    <li className="grid gap-2 items-center grid-cols-4 p-5 mb-4 shadow-lg bg-gray-50 dark:bg-slate-800 dark:text-gray-50">
+    <li className="mb-4 grid grid-cols-4 items-center gap-2 bg-gray-50 p-5 shadow-lg dark:bg-slate-800 dark:text-gray-50">
       <div className="col-span-1">
         <img
           src={`images/${image}`}

@@ -10,7 +10,7 @@ export default function Label({
   labelClass = "",
 }: LabelProps) {
   return (
-    <label htmlFor={htmlFor} className={`text-lg mb-1 block ${labelClass}`}>
+    <label htmlFor={htmlFor} className={`mb-1 block text-lg ${labelClass}`}>
       {children}
     </label>
   );

@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-6 text-4xl sm:hidden dark:text-gray-50">
+          <h2 className="mb-6 text-4xl dark:text-gray-50 sm:hidden">
             All about me
           </h2>
           <div className="flex flex-col md:flex-row md:gap-8">
@@ -30,11 +30,11 @@ export default function AboutPage() {
               <img
                 src="images/portrait.jpg"
                 alt="A professional headshot of Todd Goates: a dark-haired, caucasian male in his early thirties"
-                className="h-auto p-2 mb-6 mr-10 bg-gray-100 border border-gray-400 max-w-18 sm:max-w-72 dark:bg-black dark:border-black"
+                className="max-w-18 mb-6 mr-10 h-auto border border-gray-400 bg-gray-100 p-2 dark:border-black dark:bg-black sm:max-w-72"
               />
             </div>
             <div>
-              <h2 className="hidden mb-6 text-4xl sm:block">All about me</h2>
+              <h2 className="mb-6 hidden text-4xl sm:block">All about me</h2>
               <p className="mb-6 text-lg">
                 Hey, I'm Todd Goates
                 <AudioButton
@@ -63,11 +63,11 @@ export default function AboutPage() {
 
       <Section background="bg-slate-600" color="text-white">
         <>
-          <h3 className="mb-8 text-4xl text-center">I like working with</h3>
+          <h3 className="mb-8 text-center text-4xl">I like working with</h3>
           <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {skills.map((skill) => (
               <li
-                className="p-3 text-lg font-semibold text-center shadow-lg bg-slate-200 text-slate-800 dark:bg-slate-800 dark:text-gray-50"
+                className="bg-slate-200 p-3 text-center text-lg font-semibold text-slate-800 shadow-lg dark:bg-slate-800 dark:text-gray-50"
                 key={skill.text}
               >
                 {skill.text}
@@ -81,7 +81,7 @@ export default function AboutPage() {
         <>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h3 className="mb-8 text-3xl text-center">Places I've worked</h3>
+              <h3 className="mb-8 text-center text-3xl">Places I've worked</h3>
               <ul className="mb-8">
                 {jobs.map((job) => (
                   <InfoCard
@@ -94,7 +94,7 @@ export default function AboutPage() {
                   />
                 ))}
               </ul>
-              <p className="flex flex-col items-center mb-8 sm:flex-row">
+              <p className="mb-8 flex flex-col items-center sm:flex-row">
                 Want to learn more about my work?
                 <IconLink
                   href="/files/TMG-2024.pdf"
@@ -106,7 +106,7 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h3 className="mb-8 text-3xl text-center">Education</h3>
+              <h3 className="mb-8 text-center text-3xl">Education</h3>
               <ul className="mb-8">
                 {schooling.map((school) => (
                   <InfoCard

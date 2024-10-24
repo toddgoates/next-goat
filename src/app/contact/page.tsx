@@ -21,7 +21,7 @@ export default function ContactPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-12 text-4xl text-center">Get in touch</h2>
+          <h2 className="mb-12 text-center text-4xl">Get in touch</h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="md:col-span-2">
               <p className="mb-8 text-lg">
@@ -32,7 +32,7 @@ export default function ContactPage() {
               <ContactForm />
             </div>
             <div className="col-span-1">
-              <div className="flex flex-col gap-4 p-5 bg-white shadow-lg dark:bg-slate-800">
+              <div className="flex flex-col gap-4 bg-white p-5 shadow-lg dark:bg-slate-800">
                 <IconLink href="mailto:todd@toddgoates.com">
                   <EnvelopeIcon /> todd@toddgoates.com
                 </IconLink>

@@ -87,7 +87,7 @@ export default function RootLayout({
       </head>
       <body className="h-full bg-gray-100 dark:bg-gray-700">
         <ThemeProvider attribute="class">
-          <div className="flex flex-col justify-between h-full">
+          <div className="flex h-full flex-col justify-between">
             <Navbar />
             <main className="grow">{children}</main>
             <Footer />

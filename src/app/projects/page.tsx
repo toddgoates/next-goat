@@ -17,7 +17,7 @@ export default function ProjectsPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-12 text-4xl text-center">My work</h2>
+          <h2 className="mb-12 text-center text-4xl">My work</h2>
           <div className="grid gap-12">
             {projects.map((project, index: number) => (
               <ProjectCard

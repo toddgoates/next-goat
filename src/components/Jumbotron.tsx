@@ -11,13 +11,13 @@ export default function Jumbotron({
 }: JumbotronProps) {
   return (
     <section
-      className="flex h-full p-5 dark:invert dark:opacity-90"
+      className="flex h-full p-5 dark:opacity-90 dark:invert"
       style={{
         background,
         backgroundImage,
       }}
     >
-      <div className="flex flex-col gap-12 m-auto text-center dark:invert">
+      <div className="m-auto flex flex-col gap-12 text-center dark:invert">
         {children}
       </div>
     </section>

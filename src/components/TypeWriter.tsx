@@ -8,11 +8,11 @@ export default function TypeWriter(props: { words: Array<Word> }) {
   const { words } = props;
 
   return (
-    <span className="p-1 font-bold text-white bg-purple-500">
+    <span className="bg-purple-500 p-1 font-bold text-white">
       <Typist
         typingDelay={150}
         finishDelay={500}
-        cursor={<span className="h-1 ml-1 bg-white">|</span>}
+        cursor={<span className="ml-1 h-1 bg-white">|</span>}
       >
         {words.map((word, index) => (
           <div key={word.id}>

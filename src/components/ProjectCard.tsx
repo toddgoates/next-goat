@@ -14,7 +14,7 @@ export default function ProjectCard({
   return (
     <div
       key={project.name}
-      className="bg-white p-6 rounded shadow-lg dark:bg-slate-800 dark:text-gray-50"
+      className="rounded bg-white p-6 shadow-lg dark:bg-slate-800 dark:text-gray-50"
     >
       <div className="flex flex-col gap-8 md:flex-row">
         <a
@@ -26,7 +26,7 @@ export default function ProjectCard({
           <img
             src={`images/${project.image}`}
             alt={`Screenshot of ${project.name}`}
-            className={`w-full h-full md:w-1/2 lg:w-1/3 xl:w-1/4 ${
+            className={`h-full w-full md:w-1/2 lg:w-1/3 xl:w-1/4 ${
               reverse ? "md:order-last" : "md:order-first"
             }`}
           />

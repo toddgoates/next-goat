@@ -15,22 +15,22 @@ export default function Navbar() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <nav className="bg-white border-b border-gray-300 dark:bg-slate-800 dark:border-none">
+    <nav className="border-b border-gray-300 bg-white dark:border-none dark:bg-slate-800">
       <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
       <Container>
         <>
-          <div className="flex items-center justify-between p-5 ">
+          <div className="flex items-center justify-between p-5">
             <Link href="/" prefetch className="flex items-center gap-4">
               <img
                 src="images/goat-logo.svg"
-                className="w-14 h-14 dark:filter dark:invert"
+                className="h-14 w-14 dark:invert dark:filter"
                 alt="A stylistic goat logo"
               />
               <h1 className="text-4xl font-bold text-gray-600 dark:text-gray-50">
                 Todd Goates
               </h1>
             </Link>
-            <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8 dark:text-gray-50">
+            <ul className="hidden text-lg text-gray-600 dark:text-gray-50 md:visible md:flex md:gap-8">
               <li className="py-3">
                 <Link
                   href="/"
@@ -38,7 +38,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -52,7 +52,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/about"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -66,7 +66,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/projects"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -80,7 +80,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/contact"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -94,14 +94,14 @@ export default function Navbar() {
                     className="mt-[1px]"
                   >
                     <MoonIcon
-                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      className="size-6 transition-colors duration-300 hover:text-orange-300"
                       onClick={() => setTheme("light")}
                     />
                   </button>
                 ) : (
                   <button aria-label="Switch to dark mode" className="mt-[1px]">
                     <SunIcon
-                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      className="size-6 transition-colors duration-300 hover:text-orange-300"
                       onClick={() => setTheme("dark")}
                     />
                   </button>
@@ -117,7 +117,7 @@ export default function Navbar() {
             </button>
           </div>
           <div
-            className={`bg-gray-200 p-5 border-b border-gray-300 dark:bg-slate-700 ${
+            className={`border-b border-gray-300 bg-gray-200 p-5 dark:bg-slate-700 ${
               isOpen ? "block md:hidden" : "hidden"
             }`}
           >
@@ -129,7 +129,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -143,7 +143,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/about"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -157,7 +157,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/projects"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -171,7 +171,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/contact"
-                      ? "text-purple-500 font-semibold"
+                      ? "font-semibold text-purple-500"
                       : "font-semibold hover:text-purple-500"
                   }`}
                 >
@@ -182,14 +182,14 @@ export default function Navbar() {
                 {theme === "dark" ? (
                   <button aria-label="Switch to light mode">
                     <MoonIcon
-                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      className="size-6 transition-colors duration-300 hover:text-orange-300"
                       onClick={() => setTheme("light")}
                     />
                   </button>
                 ) : (
                   <button aria-label="Switch to dark mode">
                     <SunIcon
-                      className="size-6 hover:text-orange-300 transition-colors duration-300"
+                      className="size-6 transition-colors duration-300 hover:text-orange-300"
                       onClick={() => setTheme("dark")}
                     />
                   </button>

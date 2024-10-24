@@ -22,7 +22,7 @@ export default function Alert({ type = "info", children }: AlertProps) {
   }
 
   return (
-    <div role="alert" className={`p-5 border-l-4 ${theme}`}>
+    <div role="alert" className={`border-l-4 p-5 ${theme}`}>
       {children}
     </div>
   );
