@@ -117,7 +117,7 @@ export function getSkills(): Array<Skill> {
       text: "GitHub",
     },
     {
-      text: "You",
+      text: "You!",
     },
   ];
 }
