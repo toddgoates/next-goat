@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import Section from "@/components/Section";
+import Alert from "@/components/Alert";
 import { getAllBlogPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
@@ -15,11 +16,15 @@ export default function BlogPage() {
   return (
     <Section>
       <>
-        <h2 className="mb-12 text-center text-4xl">Blog</h2>
+        <h2 className="mb-8 text-center text-4xl">Blog</h2>
+        <p className="mb-8 text-center text-lg text-pretty italic">
+          Just some of Todd's many thoughts about technical and non-technical
+          topics.
+        </p>
         {posts.length === 0 ? (
-          <p className="text-center text-gray-600 dark:text-gray-400">
+          <Alert type="error">
             Whoops! I forgot to write something. Check back later!
-          </p>
+          </Alert>
         ) : (
           <div className="space-y-8">
             {posts.map((post) => (

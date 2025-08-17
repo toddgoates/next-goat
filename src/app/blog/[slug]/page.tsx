@@ -46,7 +46,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     <Section>
       <article className="prose prose-lg dark:prose-invert mx-auto max-w-4xl">
         <header className="mb-8 border-b border-gray-200 pb-8 dark:border-gray-700">
-          <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
+          <h1 className="mb-4 text-5xl font-bold">{post.title}</h1>
           {post.date && (
             <time className="text-gray-500 dark:text-gray-400">
               {new Date(post.date).toLocaleDateString("en-US", {
