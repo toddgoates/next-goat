@@ -75,6 +75,20 @@ export default function Navbar() {
               </li>
               <li className="py-3">
                 <Link
+                  href="/blog"
+                  prefetch
+                  onClick={() => setIsOpen(false)}
+                  className={`transition-colors duration-300 ${
+                    pathName === "/blog" || pathName?.startsWith("/blog/")
+                      ? "font-semibold text-purple-500"
+                      : "font-semibold hover:text-purple-500"
+                  }`}
+                >
+                  Blog
+                </Link>
+              </li>
+              <li className="py-3">
+                <Link
                   href="/contact"
                   prefetch
                   onClick={() => setIsOpen(false)}
@@ -162,6 +176,20 @@ export default function Navbar() {
                   }`}
                 >
                   Projects
+                </Link>
+              </li>
+              <li className="py-3">
+                <Link
+                  href="/blog"
+                  prefetch
+                  onClick={() => setIsOpen(false)}
+                  className={`transition-colors duration-300 ${
+                    pathName === "/blog" || pathName?.startsWith("/blog/")
+                      ? "font-semibold text-purple-500"
+                      : "font-semibold hover:text-purple-500"
+                  }`}
+                >
+                  Blog
                 </Link>
               </li>
               <li className="py-3">
