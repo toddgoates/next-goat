@@ -15,7 +15,7 @@ export default function Textarea({
     <textarea
       name={name}
       id={name}
-      className={`w-full rounded border border-gray-400 bg-gray-200 p-2 dark:border-gray-500 dark:bg-gray-800 ${textareaClass}`}
+      className={`w-full rounded-sm border border-gray-400 bg-gray-200 p-2 dark:border-gray-500 dark:bg-gray-800 ${textareaClass}`}
       rows={rows}
       required={required}
     ></textarea>

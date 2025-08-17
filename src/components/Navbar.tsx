@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <nav className="border-b border-gray-300 bg-white dark:border-none dark:bg-slate-800">
-      <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
+      <div className="h-4 bg-linear-to-r from-purple-500 to-orange-500"></div>
       <Container>
         <>
           <div className="flex items-center justify-between p-5">
@@ -105,7 +105,7 @@ export default function Navbar() {
                 {theme === "dark" ? (
                   <button
                     aria-label="Switch to light mode"
-                    className="mt-[1px]"
+                    className="mt-px"
                   >
                     <MoonIcon
                       className="size-6 transition-colors duration-300 hover:text-orange-300"
@@ -113,7 +113,7 @@ export default function Navbar() {
                     />
                   </button>
                 ) : (
-                  <button aria-label="Switch to dark mode" className="mt-[1px]">
+                  <button aria-label="Switch to dark mode" className="mt-px">
                     <SunIcon
                       className="size-6 transition-colors duration-300 hover:text-orange-300"
                       onClick={() => setTheme("dark")}

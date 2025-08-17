@@ -18,7 +18,7 @@ export default function Input({
       type={type}
       name={name}
       id={name}
-      className={`w-full rounded border border-gray-400 bg-gray-200 p-2 dark:border-gray-500 dark:bg-gray-800 ${inputClass}`}
+      className={`w-full rounded-sm border border-gray-400 bg-gray-200 p-2 dark:border-gray-500 dark:bg-gray-800 ${inputClass}`}
       required={required}
       {...props}
     />
