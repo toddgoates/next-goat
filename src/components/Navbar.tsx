@@ -22,7 +22,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between p-5">
             <Link href="/" prefetch className="flex items-center gap-4">
               <img
-                src="images/goat-logo.svg"
+                src="/images/goat-logo.svg"
                 className="h-14 w-14 dark:invert dark:filter"
                 alt="A stylistic goat logo"
               />
@@ -30,7 +30,7 @@ export default function Navbar() {
                 Todd Goates
               </h1>
             </Link>
-            <ul className="hidden text-lg text-gray-600 dark:text-gray-50 md:visible md:flex md:gap-8">
+            <ul className="hidden text-lg text-gray-600 md:visible md:flex md:gap-8 dark:text-gray-50">
               <li className="py-3">
                 <Link
                   href="/"
@@ -103,10 +103,7 @@ export default function Navbar() {
               </li>
               <li className="py-3">
                 {theme === "dark" ? (
-                  <button
-                    aria-label="Switch to light mode"
-                    className="mt-px"
-                  >
+                  <button aria-label="Switch to light mode" className="mt-px">
                     <MoonIcon
                       className="size-6 transition-colors duration-300 hover:text-orange-300"
                       onClick={() => setTheme("light")}

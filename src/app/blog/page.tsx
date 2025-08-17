@@ -18,14 +18,14 @@ export default function BlogPage() {
         <h2 className="mb-12 text-center text-4xl">Blog</h2>
         {posts.length === 0 ? (
           <p className="text-center text-gray-600 dark:text-gray-400">
-            No blog posts yet. Check back soon!
+            Whoops! I forgot to write something. Check back later!
           </p>
         ) : (
           <div className="space-y-8">
             {posts.map((post) => (
               <article
                 key={post.slug}
-                className="border-b border-gray-200 bg-gray-50 p-5 shadow-lg last:border-b-0 dark:border-gray-700"
+                className="border-b border-gray-200 bg-gray-50 p-5 shadow-lg last:border-b-0 dark:border-gray-700 dark:bg-slate-800"
               >
                 <Link
                   href={`/blog/${post.slug}`}
