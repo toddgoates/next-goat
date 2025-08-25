@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 
 import Section from "@/components/Section";
+import Alert from "@/components/Alert";
 import { getBlogPost, getAllBlogPosts } from "@/lib/blog";
 
 interface BlogPostPageProps {
@@ -58,7 +59,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           )}
         </header>
         <div className="mdx-content">
-          <MDXRemote source={post.content} />
+          <MDXRemote source={post.content} components={{ Alert }} />
         </div>
       </article>
     </Section>

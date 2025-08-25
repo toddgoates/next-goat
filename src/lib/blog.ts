@@ -8,6 +8,7 @@ export interface BlogPost {
   date: string;
   excerpt?: string;
   content: string;
+  tags: string[];
 }
 
 const postsDirectory = path.join(process.cwd(), "posts");
@@ -32,6 +33,7 @@ export function getAllBlogPosts(): BlogPost[] {
         date: matterResult.data.date || "",
         excerpt: matterResult.data.excerpt || "",
         content: matterResult.content,
+        tags: matterResult.data.tags ? matterResult.data.tags.split(", ") : [],
       };
     });
 
@@ -50,6 +52,7 @@ export function getBlogPost(slug: string): BlogPost | null {
       date: matterResult.data.date || "",
       excerpt: matterResult.data.excerpt || "",
       content: matterResult.content,
+      tags: matterResult.data.tags ? matterResult.data.tags.split(", ") : [],
     };
   } catch (error) {
     return null;
