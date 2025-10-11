@@ -55,6 +55,10 @@ export async function sendMessage(prevState: any, formData: FormData) {
       "Sorry, I'm not accepting messages with links at this time";
   }
 
+  if (typeof message === "string" && message.toLowerCase().includes("seo")) {
+    errors.message = "Sorry, I'm not interested in SEO requests";
+  }
+
   // Return errors, if any
   if (Object.values(errors).some((error) => error.length > 0)) {
     return { error: errors };
