@@ -1,4 +1,4 @@
-import { AiOutlineLink as LinkIcon } from "react-icons/ai";
+import { FaExternalLinkAlt as LinkIcon } from "react-icons/fa";
 
 type InfoCardProps = {
   image: string;
@@ -25,10 +25,10 @@ export default function InfoCard({
         />
       </div>
       <div className="col-span-3">
-        <h4 className="flex items-center gap-1 text-xl font-semibold">
+        <h4 className="flex items-center gap-2 text-xl font-semibold">
           {title}
           <a href={link} target="_blank" rel="noreferrer">
-            <LinkIcon />
+            <LinkIcon className="size-3" />
           </a>
         </h4>
         <div className="flex items-center justify-between">
