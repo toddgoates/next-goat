@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
@@ -11,8 +11,13 @@ import Container from "./Container";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [mounted, setMounted] = useState(false);
   const pathName = usePathname();
   const { theme, setTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <nav className="border-b border-gray-300 bg-white dark:border-none dark:bg-slate-800">
@@ -88,23 +93,32 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="py-3">
-                {theme === "dark" ? (
-                  <button
-                    aria-label="Switch to light mode"
-                    className="mt-[1px]"
-                  >
-                    <MoonIcon
-                      className="size-6 transition-colors duration-300 hover:text-orange-300"
-                      onClick={() => setTheme("light")}
-                    />
-                  </button>
+                {mounted ? (
+                  <>
+                    {theme === "dark" ? (
+                      <button
+                        aria-label="Switch to light mode"
+                        className="mt-[1px]"
+                      >
+                        <MoonIcon
+                          className="size-6 transition-colors duration-300 hover:text-orange-300"
+                          onClick={() => setTheme("light")}
+                        />
+                      </button>
+                    ) : (
+                      <button
+                        aria-label="Switch to dark mode"
+                        className="mt-[1px]"
+                      >
+                        <SunIcon
+                          className="size-6 transition-colors duration-300 hover:text-orange-300"
+                          onClick={() => setTheme("dark")}
+                        />
+                      </button>
+                    )}
+                  </>
                 ) : (
-                  <button aria-label="Switch to dark mode" className="mt-[1px]">
-                    <SunIcon
-                      className="size-6 transition-colors duration-300 hover:text-orange-300"
-                      onClick={() => setTheme("dark")}
-                    />
-                  </button>
+                  <div className="mt-[1px] size-6" />
                 )}
               </li>
             </ul>
@@ -179,20 +193,26 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="py-3">
-                {theme === "dark" ? (
-                  <button aria-label="Switch to light mode">
-                    <MoonIcon
-                      className="size-6 transition-colors duration-300 hover:text-orange-300"
-                      onClick={() => setTheme("light")}
-                    />
-                  </button>
+                {mounted ? (
+                  <>
+                    {theme === "dark" ? (
+                      <button aria-label="Switch to light mode">
+                        <MoonIcon
+                          className="size-6 transition-colors duration-300 hover:text-orange-300"
+                          onClick={() => setTheme("light")}
+                        />
+                      </button>
+                    ) : (
+                      <button aria-label="Switch to dark mode">
+                        <SunIcon
+                          className="size-6 transition-colors duration-300 hover:text-orange-300"
+                          onClick={() => setTheme("dark")}
+                        />
+                      </button>
+                    )}
+                  </>
                 ) : (
-                  <button aria-label="Switch to dark mode">
-                    <SunIcon
-                      className="size-6 transition-colors duration-300 hover:text-orange-300"
-                      onClick={() => setTheme("dark")}
-                    />
-                  </button>
+                  <div className="size-6" />
                 )}
               </li>
             </ul>
