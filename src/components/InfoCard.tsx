@@ -25,12 +25,12 @@ export default function InfoCard({
         />
       </div>
       <div className="col-span-3">
-        <h4 className="flex items-center gap-2 text-xl font-semibold">
-          {title}
-          <a href={link} target="_blank" rel="noreferrer">
+        <a href={link} target="_blank" rel="noreferrer">
+          <h4 className="flex items-center gap-2 text-xl font-semibold">
+            {title}
             <LinkIcon className="size-3" />
-          </a>
-        </h4>
+          </h4>
+        </a>
         <div className="flex items-center justify-between">
           <p>{subtitle}</p>
           <p className="text-gray-700 dark:text-gray-100">{dates}</p>

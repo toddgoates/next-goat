@@ -1,3 +1,5 @@
+import { FaExternalLinkAlt as LinkIcon } from "react-icons/fa";
+
 import ButtonLink from "./ButtonLink";
 import Badge from "./Badge";
 import type { Project } from "@/lib/types";
@@ -41,12 +43,21 @@ export default function ProjectCard({
               ))}
             </div>
             <div className="flex gap-4">
-              <ButtonLink href={project.link} external>
-                Visit Site
+              <ButtonLink
+                href={project.link}
+                buttonClass="flex gap-2 items-center"
+                external
+              >
+                Visit Site <LinkIcon className="size-4" />
               </ButtonLink>
               {project?.repoLink ? (
-                <ButtonLink href={project.repoLink} outlined external>
-                  View Code
+                <ButtonLink
+                  href={project.repoLink}
+                  buttonClass="flex gap-2 items-center"
+                  outlined
+                  external
+                >
+                  View Code <LinkIcon className="size-4" />
                 </ButtonLink>
               ) : null}
             </div>

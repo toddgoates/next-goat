@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import {
   AiOutlineMail as EnvelopeIcon,
   AiOutlinePhone as PhoneIcon,
-  AiFillTwitterSquare as TwitterIcon,
   AiFillGithub as GithubIcon,
   AiFillLinkedin as LinkedinIcon,
 } from "react-icons/ai";
+import { FaSquareXTwitter as XIcon } from "react-icons/fa6";
 
 import IconLink from "@/components/IconLink";
 import Section from "@/components/Section";
@@ -44,7 +44,7 @@ export default function ContactPage() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <TwitterIcon /> Twitter
+                  <XIcon /> X
                 </IconLink>
                 <IconLink
                   href="https://github.com/toddgoates"
