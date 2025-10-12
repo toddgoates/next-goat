@@ -89,6 +89,7 @@ export default function AboutPage() {
                     title={job.company}
                     subtitle={job.title}
                     image={job.logo}
+                    imageInvertable={job.imageInvertable}
                     dates={job.years}
                     link={job.website}
                   />

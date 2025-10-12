@@ -13,6 +13,7 @@ export interface Job {
   title: string;
   years: string;
   logo: string;
+  imageInvertable?: boolean;
   website: string;
 }
 

@@ -2,6 +2,7 @@ import { FaExternalLinkAlt as LinkIcon } from "react-icons/fa";
 
 type InfoCardProps = {
   image: string;
+  imageInvertable?: boolean;
   title: string;
   subtitle: string;
   dates: string;
@@ -10,6 +11,7 @@ type InfoCardProps = {
 
 export default function InfoCard({
   image,
+  imageInvertable = false,
   title,
   subtitle,
   dates,
@@ -21,7 +23,7 @@ export default function InfoCard({
         <img
           src={`images/${image}`}
           alt={`Logo for ${title}`}
-          className="w-20"
+          className={`w-20 ${imageInvertable ? "dark:invert" : ""}`}
         />
       </div>
       <div className="col-span-3">

@@ -130,6 +130,7 @@ export function getJobs(): Array<Job> {
       title: "Chief Technology Officer",
       years: "Jan 2021 - Now",
       logo: "strumn-logo.svg",
+      imageInvertable: true,
       website: "https://strumn.com",
     },
     {
@@ -138,6 +139,7 @@ export function getJobs(): Array<Job> {
       title: "VP of Development",
       years: "Dec 2019 - Now",
       logo: "q90-logo.svg",
+      imageInvertable: false,
       website: "https://www.q90.com",
     },
     {
@@ -146,6 +148,7 @@ export function getJobs(): Array<Job> {
       title: "Software Engineer",
       years: "May 2014 - Dec 2019",
       logo: "q90-logo.svg",
+      imageInvertable: false,
       website: "https://www.q90.com",
     },
     {
@@ -154,6 +157,7 @@ export function getJobs(): Array<Job> {
       title: "Web Developer Volunteer",
       years: "2013",
       logo: "achf-logo.png",
+      imageInvertable: false,
       website: "https://achildshopefoundation.org",
     },
   ];
