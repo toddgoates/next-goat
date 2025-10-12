@@ -18,7 +18,7 @@ export default function InfoCard({
   link,
 }: InfoCardProps) {
   return (
-    <li className="mb-4 grid grid-cols-4 items-center gap-2 bg-gray-50 p-5 shadow-lg dark:bg-slate-800 dark:text-gray-50">
+    <li className="mb-4 grid grid-cols-4 items-start gap-2 bg-gray-50 p-5 shadow-lg dark:bg-slate-800 dark:text-gray-50 md:items-center">
       <div className="col-span-1">
         <img
           src={`images/${image}`}
@@ -26,7 +26,7 @@ export default function InfoCard({
           className={`w-20 ${imageInvertable ? "dark:invert" : ""}`}
         />
       </div>
-      <div className="col-span-3">
+      <div className="col-span-3 space-y-4 md:space-y-2">
         <a href={link} target="_blank" rel="noreferrer">
           <h4 className="flex items-center gap-2 text-xl font-semibold">
             {title}
