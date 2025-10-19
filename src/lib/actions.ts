@@ -1,11 +1,32 @@
 "use server";
 
+import { validateTurnstileToken } from "next-turnstile";
+import { v4 } from "uuid";
+
 export async function sendMessage(prevState: any, formData: FormData) {
   // Get form values
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
   const honeypot = formData.get("phone") as string;
+
+  // Check Turnstile token
+  const token = formData.get("cf-turnstile-response") as string;
+
+  const validationResponse = await validateTurnstileToken({
+    token,
+    secretKey: process.env.TURNSTILE_SECRET_KEY!,
+    idempotencyKey: v4(),
+    sandbox: process.env.NODE_ENV === "development",
+  });
+
+  if (!validationResponse.success) {
+    return {
+      error: {
+        message: "Turnstile validation failed. Please try again.",
+      },
+    };
+  }
 
   // Reset errors
   const errors = {

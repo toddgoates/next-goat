@@ -1,6 +1,8 @@
 "use client";
 
 import { useFormState, useFormStatus } from "react-dom";
+import { useState } from "react";
+import { Turnstile } from "next-turnstile";
 
 import Alert from "./Alert";
 import Label from "./Label";
@@ -13,6 +15,10 @@ import { sendMessage } from "@/lib/actions";
 export default function ContactForm() {
   const [state, formAction] = useFormState(sendMessage, null);
   const { pending } = useFormStatus();
+  const [turnstileStatus, setTurnstileStatus] = useState<
+    "success" | "error" | "expired" | "required"
+  >("required");
+  const [error, setError] = useState<string | null>(null);
 
   return state?.message ? (
     <Alert type="success">
@@ -57,6 +63,31 @@ export default function ContactForm() {
             <p>&nbsp;</p>
           )}
         </div>
+        <div className="max-w-80 items-start">
+          <Turnstile
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+            retry="auto"
+            refreshExpired="auto"
+            sandbox={process.env.NODE_ENV === "development"}
+            onError={() => {
+              setTurnstileStatus("error");
+              setError("Security check failed. Please try again.");
+            }}
+            onExpire={() => {
+              setTurnstileStatus("expired");
+              setError("Security check expired. Please verify again.");
+            }}
+            onLoad={() => {
+              setTurnstileStatus("required");
+              setError(null);
+            }}
+            onVerify={(token) => {
+              setTurnstileStatus("success");
+              setError(null);
+            }}
+          />
+        </div>
+        <div>{error && <InputError message={error} />}</div>
         <div className="text-left">
           <Button type="submit" submittingText="Sending message...">
             Send Message
