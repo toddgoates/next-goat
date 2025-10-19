@@ -10,6 +10,18 @@ export async function sendMessage(prevState: any, formData: FormData) {
   const message = formData.get("message") as string;
   const honeypot = formData.get("phone") as string;
 
+  // Reset errors
+  const errors = {
+    name: "",
+    email: "",
+    message: "",
+  };
+
+  // Check honeypot
+  if (honeypot) {
+    return { message: "Thanks for submitting" };
+  }
+
   // Check Turnstile token
   const token = formData.get("cf-turnstile-response") as string;
 
@@ -21,23 +33,8 @@ export async function sendMessage(prevState: any, formData: FormData) {
   });
 
   if (!validationResponse.success) {
-    return {
-      error: {
-        message: "Turnstile validation failed. Please try again.",
-      },
-    };
-  }
-
-  // Reset errors
-  const errors = {
-    name: "",
-    email: "",
-    message: "",
-  };
-
-  // Check honeypot
-  if (honeypot) {
-    return { message: "Thanks for submitting" };
+    errors.message = "You are a bot!";
+    return { error: errors };
   }
 
   // Validate name
