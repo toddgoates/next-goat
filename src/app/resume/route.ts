@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 export async function GET() {
-  const filePath = path.join(process.cwd(), "public", "files", "TMG-2024.pdf");
+  const filePath = path.join(process.cwd(), "public", "files", "TMG-2025.pdf");
   const fileBuffer = fs.readFileSync(filePath);
 
   return new Response(fileBuffer, {

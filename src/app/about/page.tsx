@@ -98,7 +98,7 @@ export default function AboutPage() {
               <p className="mb-8 flex flex-col items-center sm:flex-row">
                 Want to learn more about my work?
                 <IconLink
-                  href="/files/TMG-2024.pdf"
+                  href="/files/TMG-2025.pdf"
                   download="Todd-Goates-Resume"
                 >
                   <DownloadIcon />
