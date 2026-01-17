@@ -182,7 +182,7 @@ export function getProjects(): Array<Project> {
       name: "Utah Tech Work",
       description:
         "This is a job board website for tech jobs in the state of Utah. This site was built with Laravel, Tailwind CSS, Livewire, and Alpine.js. It also uses Pest for automated testing and Stripe for one-time payments. The site is hosted on a DigitalOcean droplet, which I configured with Nginx, PHP-FPM, Composer, and other needed libraries.",
-      link: "https://www.utahtech.work",
+      link: "https://utah-tech-work.vercel.app",
       image: "utw.png",
       tech: [
         "Laravel",
