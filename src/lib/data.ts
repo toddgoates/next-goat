@@ -137,6 +137,15 @@ export function getSkills(): Array<Skill> {
 export function getJobs(): Array<Job> {
   return [
     {
+      id: 1,
+      company: "Strumn",
+      title: "CTO (part-time)",
+      years: "Jan 2021 - Now",
+      logo: "strumn-logo.svg",
+      imageInvertable: true,
+      website: "https://strumn.com",
+    },
+    {
       id: 2,
       company: "Q90 Corporation",
       title: "VP of Development",
@@ -153,15 +162,6 @@ export function getJobs(): Array<Job> {
       logo: "q90-logo.svg",
       imageInvertable: false,
       website: "https://www.q90.com",
-    },
-    {
-      id: 1,
-      company: "Strumn",
-      title: "CTO (part-time)",
-      years: "Jan 2021 - Now",
-      logo: "strumn-logo.svg",
-      imageInvertable: true,
-      website: "https://strumn.com",
     },
     {
       id: 4,
