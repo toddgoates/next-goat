@@ -96,6 +96,9 @@ export function getSkills(): Array<Skill> {
       text: "MySQL",
     },
     {
+      text: "PostgreSQL",
+    },
+    {
       text: "AWS",
     },
     {
@@ -115,6 +118,15 @@ export function getSkills(): Array<Skill> {
     },
     {
       text: "GitHub",
+    },
+    {
+      text: "Stripe",
+    },
+    {
+      text: "OpenAI",
+    },
+    {
+      text: "Claude",
     },
     {
       text: "You!",
