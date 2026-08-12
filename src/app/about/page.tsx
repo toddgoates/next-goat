@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-6 text-4xl dark:text-gray-50 sm:hidden">
+          <h2 className="mb-8 text-5xl font-black dark:text-white sm:hidden">
             All about me
           </h2>
           <div className="flex flex-col md:flex-row md:gap-8">
@@ -30,25 +30,30 @@ export default function AboutPage() {
               <img
                 src="images/portrait.jpg"
                 alt="A professional headshot of Todd Goates: a dark-haired, caucasian male in his early thirties"
-                className="max-w-18 mb-6 mr-10 h-auto border border-gray-400 bg-gray-100 p-2 dark:border-black dark:bg-black sm:max-w-72"
+                className="mb-8 h-auto w-full max-w-72 -rotate-2 rounded-[2rem] border border-purple-100 bg-white p-2 shadow-[0_24px_60px_-24px_rgba(88,28,135,.5)] transition-transform duration-300 hover:rotate-0 dark:border-white/10 dark:bg-white/5 md:mr-10"
               />
             </div>
             <div>
-              <h2 className="mb-6 hidden text-4xl sm:block">All about me</h2>
-              <p className="mb-6 text-lg">
+              <h2 className="mb-3 hidden text-sm font-bold uppercase tracking-[0.2em] text-purple-600 dark:text-purple-300 sm:block">
+                A little background
+              </h2>
+              <h2 className="mb-8 hidden text-5xl font-black sm:block">
+                All about me<span className="text-orange-500">.</span>
+              </h2>
+              <p className="mb-6 text-lg leading-relaxed">
                 Hey, I'm Todd Goates
                 <AudioButton
                   src="audio/goat.mp3"
                   description="How to pronounce my last name"
                 />
               </p>
-              <p className="mb-6 text-lg">
+              <p className="mb-6 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
                 Thanks for stopping by! I'm a Full-Stack Developer, artist,
                 wanna-be writer, outdoor enthusiast, lover of synths, and most
                 importantly, a husband and father. I am passionate about
                 programming and keeping up with the latest technology.
               </p>
-              <p className="mb-12 text-lg">
+              <p className="mb-12 max-w-3xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
                 Interested in working together? Check out some of the work I've
                 done.
               </p>
@@ -61,13 +66,18 @@ export default function AboutPage() {
         </>
       </Section>
 
-      <Section background="bg-slate-600" color="text-white">
+      <Section
+        background="bg-gradient-to-br from-purple-700 via-purple-600 to-fuchsia-600"
+        color="text-white"
+      >
         <>
-          <h3 className="mb-8 text-center text-4xl">I like working with</h3>
+          <h3 className="mb-10 text-center text-4xl font-black sm:text-5xl">
+            I like working with
+          </h3>
           <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-4">
             {skills.map((skill) => (
               <li
-                className="bg-slate-200 p-3 text-center text-lg font-semibold text-slate-800 shadow-lg dark:bg-slate-800 dark:text-gray-50"
+                className="rounded-2xl border border-white/20 bg-white/90 p-4 text-center text-lg font-bold text-purple-950 shadow-lg transition duration-300 hover:-translate-y-1 hover:rotate-1 dark:bg-white/10 dark:text-white"
                 key={skill.text}
               >
                 {skill.text}
@@ -77,11 +87,13 @@ export default function AboutPage() {
         </>
       </Section>
 
-      <Section background="bg-gray-300">
+      <Section background="bg-purple-50/70">
         <>
           <div className="grid gap-12 lg:grid-cols-2">
             <div>
-              <h3 className="mb-8 text-center text-3xl">Places I've worked</h3>
+              <h3 className="mb-8 text-center text-3xl font-black">
+                Places I’ve worked
+              </h3>
               <ul className="mb-8">
                 {jobs.map((job) => (
                   <InfoCard
@@ -107,7 +119,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <h3 className="mb-8 text-center text-3xl">Education</h3>
+              <h3 className="mb-8 text-center text-3xl font-black">
+                Education
+              </h3>
               <ul className="mb-8">
                 {schooling.map((school) => (
                   <InfoCard

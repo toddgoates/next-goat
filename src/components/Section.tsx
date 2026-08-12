@@ -13,7 +13,7 @@ export default function Section({
 }: SectionProps) {
   return (
     <section
-      className={`py-12 ${background} ${color} dark:bg-gray-700 dark:text-gray-50`}
+      className={`relative py-20 sm:py-24 ${background} ${color} dark:bg-[#171421] dark:text-slate-100`}
     >
       <Container extraSpace>{children}</Container>
     </section>

@@ -21,18 +21,26 @@ export default function ContactPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-12 text-center text-4xl">Get in touch</h2>
+          <div className="mb-14 text-center">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-purple-600 dark:text-purple-300">
+              Say hello
+            </p>
+            <h2 className="text-balance text-5xl font-black sm:text-6xl">
+              Let’s make something cool.
+            </h2>
+          </div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             <div className="md:col-span-2">
               <p className="mb-8 text-lg">
                 Want to collaborate together on project? Feel free to get in
                 touch by email or text or fill out the form below... or connect
-                with me on social media... or don't. It's your choice.
+                with me on social media... or come to my house and say hi. Just
+                kidding, please don't do that.
               </p>
               <ContactForm />
             </div>
             <div className="col-span-1">
-              <div className="flex flex-col gap-4 bg-white p-5 shadow-lg dark:bg-slate-800">
+              <div className="flex flex-col gap-5 rounded-[2rem] border border-purple-100 bg-white/80 p-7 shadow-lg dark:border-white/10 dark:bg-white/5">
                 <IconLink href="mailto:todd@toddgoates.com">
                   <EnvelopeIcon /> todd@toddgoates.com
                 </IconLink>

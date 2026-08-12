@@ -20,79 +20,79 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="border-b border-gray-300 bg-white dark:border-none dark:bg-slate-800">
-      <div className="h-4 bg-gradient-to-r from-purple-500 to-orange-500"></div>
+    <nav className="relative z-50 border-b border-purple-100/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#211b31]/85">
+      <div className="h-1.5 bg-gradient-to-r from-purple-500 via-fuchsia-400 to-orange-400"></div>
       <Container>
         <>
-          <div className="flex items-center justify-between p-5">
-            <Link href="/" prefetch className="flex items-center gap-4">
+          <div className="flex h-24 items-center justify-between">
+            <Link href="/" prefetch className="group flex items-center gap-3">
               <img
                 src="images/goat-logo.svg"
-                className="h-14 w-14 dark:invert dark:filter"
+                className="h-12 w-12 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105 dark:invert dark:filter"
                 alt="A stylistic goat logo"
               />
-              <h1 className="text-4xl font-bold text-gray-600 dark:text-gray-50">
+              <h1 className="text-2xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-3xl">
                 Todd Goates
               </h1>
             </Link>
-            <ul className="hidden text-lg text-gray-600 dark:text-gray-50 md:visible md:flex md:gap-8">
-              <li className="py-3">
+            <ul className="hidden items-center gap-1 text-base text-slate-600 dark:text-slate-200 md:visible md:flex">
+              <li>
                 <Link
                   href="/"
                   prefetch
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/"
-                      ? "font-semibold text-purple-500"
-                      : "font-semibold hover:text-purple-500"
+                      ? "rounded-full bg-purple-100 px-4 py-2 font-bold text-purple-700 dark:bg-purple-400/15 dark:text-purple-300"
+                      : "rounded-full px-4 py-2 font-semibold hover:bg-purple-50 hover:text-purple-600 dark:hover:bg-white/5 dark:hover:text-purple-300"
                   }`}
                 >
                   Home
                 </Link>
               </li>
-              <li className="py-3">
+              <li>
                 <Link
                   href="/about"
                   prefetch
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/about"
-                      ? "font-semibold text-purple-500"
-                      : "font-semibold hover:text-purple-500"
+                      ? "rounded-full bg-purple-100 px-4 py-2 font-bold text-purple-700 dark:bg-purple-400/15 dark:text-purple-300"
+                      : "rounded-full px-4 py-2 font-semibold hover:bg-purple-50 hover:text-purple-600 dark:hover:bg-white/5 dark:hover:text-purple-300"
                   }`}
                 >
                   About
                 </Link>
               </li>
-              <li className="py-3">
+              <li>
                 <Link
                   href="/projects"
                   prefetch
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/projects"
-                      ? "font-semibold text-purple-500"
-                      : "font-semibold hover:text-purple-500"
+                      ? "rounded-full bg-purple-100 px-4 py-2 font-bold text-purple-700 dark:bg-purple-400/15 dark:text-purple-300"
+                      : "rounded-full px-4 py-2 font-semibold hover:bg-purple-50 hover:text-purple-600 dark:hover:bg-white/5 dark:hover:text-purple-300"
                   }`}
                 >
                   Projects
                 </Link>
               </li>
-              <li className="py-3">
+              <li>
                 <Link
                   href="/contact"
                   prefetch
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 ${
                     pathName === "/contact"
-                      ? "font-semibold text-purple-500"
-                      : "font-semibold hover:text-purple-500"
+                      ? "rounded-full bg-purple-100 px-4 py-2 font-bold text-purple-700 dark:bg-purple-400/15 dark:text-purple-300"
+                      : "rounded-full px-4 py-2 font-semibold hover:bg-purple-50 hover:text-purple-600 dark:hover:bg-white/5 dark:hover:text-purple-300"
                   }`}
                 >
                   Contact
                 </Link>
               </li>
-              <li className="py-3">
+              <li className="ml-2 flex size-10 items-center justify-center rounded-full bg-orange-100 text-orange-600 dark:bg-orange-300/10 dark:text-orange-300">
                 {mounted ? (
                   <>
                     {theme === "dark" ? (
@@ -124,14 +124,14 @@ export default function Navbar() {
             </ul>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden"
+              className="rounded-full bg-purple-100 p-3 text-purple-700 dark:bg-white/10 dark:text-purple-200 md:hidden"
               aria-label="Toggle menu"
             >
               <MenuIcon className="text-2xl dark:text-gray-50" />
             </button>
           </div>
           <div
-            className={`border-b border-gray-300 bg-gray-200 p-5 dark:bg-slate-700 ${
+            className={`rounded-b-3xl border-t border-purple-100 bg-white p-6 shadow-xl dark:border-white/10 dark:bg-[#211b31] ${
               isOpen ? "block md:hidden" : "hidden"
             }`}
           >

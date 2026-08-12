@@ -8,7 +8,9 @@ export default function Container({
   extraSpace = false,
 }: ContainerProps) {
   return (
-    <div className={`md:mx-auto md:max-w-7xl ${extraSpace ? "px-5" : ""}`}>
+    <div
+      className={`mx-auto w-full max-w-7xl ${extraSpace ? "px-6 sm:px-8 lg:px-10" : "px-5 sm:px-8"}`}
+    >
       {children}
     </div>
   );

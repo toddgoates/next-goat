@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #d8b4fe;
+  color: #3b0764;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.035em;
+  }
+
+  a,
+  button,
+  input,
+  textarea {
+    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-300/60;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
 .honey {
   opacity: 0;
   position: absolute;

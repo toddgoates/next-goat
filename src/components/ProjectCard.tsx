@@ -16,7 +16,7 @@ export default function ProjectCard({
   return (
     <div
       key={project.name}
-      className="rounded bg-white p-6 shadow-lg dark:bg-slate-800 dark:text-gray-50"
+      className="group rounded-[2rem] border border-purple-100 bg-white/80 p-5 shadow-[0_20px_60px_-30px_rgba(88,28,135,.35)] backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-purple-200 hover:shadow-[0_28px_70px_-28px_rgba(88,28,135,.45)] dark:border-white/10 dark:bg-white/5 dark:text-slate-100 sm:p-8"
     >
       <div className="flex flex-col gap-8 md:flex-row">
         <a
@@ -28,15 +28,19 @@ export default function ProjectCard({
           <img
             src={`images/${project.image}`}
             alt={`Screenshot of ${project.name}`}
-            className={`h-full w-full md:w-1/2 lg:w-1/3 xl:w-1/4 ${
+            className={`h-full w-full rounded-2xl border border-slate-200 object-cover shadow-md transition-transform duration-500 group-hover:scale-[1.015] dark:border-white/10 md:w-1/2 lg:w-1/3 xl:w-2/5 ${
               reverse ? "md:order-last" : "md:order-first"
             }`}
           />
         </a>
         <div className="grow">
           <div className="flex flex-col gap-8">
-            <h3 className="text-xl font-semibold">{project.name}</h3>
-            <p className="text-lg">{project.description}</p>
+            <h3 className="text-2xl font-extrabold sm:text-3xl">
+              {project.name}
+            </h3>
+            <p className="text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+              {project.description}
+            </p>
             <div className="flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <Badge key={t}>{t}</Badge>

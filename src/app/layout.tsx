@@ -85,9 +85,9 @@ export default function RootLayout({
           href="/apple-touch-icon-180x180.png"
         />
       </head>
-      <body className="h-full bg-gray-100 dark:bg-gray-700">
+      <body className="h-full bg-[#fbf8ff] text-slate-800 antialiased dark:bg-[#171421] dark:text-slate-100">
         <ThemeProvider attribute="class">
-          <div className="flex h-full flex-col justify-between">
+          <div className="flex min-h-full flex-col justify-between overflow-hidden">
             <Navbar />
             <main className="grow">{children}</main>
             <Footer />
