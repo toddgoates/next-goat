@@ -191,6 +191,15 @@ export function getSchooling(): Array<Schooling> {
 export function getProjects(): Array<Project> {
   return [
     {
+      name: "Cybertaxi",
+      description:
+        "I've been interested in game development for a while. I submitted this game to the 2026 Vibejam game jam. Unfortunately it didn't place but I had a blast making it and learned a ton about Three.js and game development in general. The game is a cyberpunk 3D driving game where you drive a taxi around a city, pick up passengers, and avoid evil robo taxis. The game uses the Suno for music and ElevenLabs for voice acting and is hosted on AWS S3 with CloudFront for fast delivery.",
+      link: "https://cybertaxi.toddgoates.com",
+      repoLink: "https://github.com/toddgoates/cybertaxi",
+      image: "cybertaxi.png",
+      tech: ["Three.js", "AWS", "JavaScript", "Suno", "ElevenLabs"],
+    },
+    {
       name: "Utah Tech Work",
       description:
         "This is a job board website for tech jobs in the state of Utah. This site was built with Laravel, Tailwind CSS, Livewire, and Alpine.js. It also uses Pest for automated testing and Stripe for one-time payments. The site is hosted on a DigitalOcean droplet, which I configured with Nginx, PHP-FPM, Composer, and other needed libraries.",
