@@ -23,21 +23,21 @@ export default function Navbar() {
 
   return (
     <nav className="relative z-50 border-b border-purple-100/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#211b31]/85">
-      <div className="h-1.5 bg-gradient-to-r from-purple-500 via-fuchsia-400 to-orange-400"></div>
+      <div className="h-1.5 bg-linear-to-r from-purple-500 via-fuchsia-400 to-orange-400"></div>
       <Container>
         <>
           <div className="flex h-24 items-center justify-between">
             <Link href="/" prefetch className="group flex items-center gap-3">
               <img
                 src="images/goat-logo.svg"
-                className="h-12 w-12 transition-transform duration-300 group-hover:-rotate-6 group-hover:scale-105 dark:invert dark:filter"
+                className="h-12 w-12 transition-transform duration-300 group-hover:scale-105 group-hover:-rotate-6 dark:invert dark:filter"
                 alt="A stylistic goat logo"
               />
-              <h1 className="text-2xl font-extrabold tracking-tight text-slate-800 dark:text-white sm:text-3xl">
+              <h1 className="text-2xl font-extrabold tracking-tight text-slate-800 sm:text-3xl dark:text-white">
                 Todd Goates
               </h1>
             </Link>
-            <ul className="hidden items-center gap-1 text-base text-slate-600 dark:text-slate-200 md:visible md:flex">
+            <ul className="hidden items-center gap-1 text-base text-slate-600 md:visible md:flex dark:text-slate-200">
               <li>
                 <Link
                   href="/"
@@ -100,7 +100,7 @@ export default function Navbar() {
                     {theme === "dark" ? (
                       <button
                         aria-label="Switch to light mode"
-                        className="mt-[1px]"
+                        className="mt-px"
                       >
                         <MoonIcon
                           className="size-6 transition-colors duration-300 hover:text-orange-300"
@@ -110,7 +110,7 @@ export default function Navbar() {
                     ) : (
                       <button
                         aria-label="Switch to dark mode"
-                        className="mt-[1px]"
+                        className="mt-px"
                       >
                         <SunIcon
                           className="size-6 transition-colors duration-300 hover:text-orange-300"
@@ -120,13 +120,13 @@ export default function Navbar() {
                     )}
                   </>
                 ) : (
-                  <div className="mt-[1px] size-6" />
+                  <div className="mt-px size-6" />
                 )}
               </li>
             </ul>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="rounded-full bg-purple-100 p-3 text-purple-700 dark:bg-white/10 dark:text-purple-200 md:hidden"
+              className="rounded-full bg-purple-100 p-3 text-purple-700 md:hidden dark:bg-white/10 dark:text-purple-200"
               aria-label="Toggle menu"
             >
               <MenuIcon className="text-2xl dark:text-gray-50" />

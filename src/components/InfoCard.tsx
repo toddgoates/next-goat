@@ -18,7 +18,7 @@ export default function InfoCard({
   link,
 }: InfoCardProps) {
   return (
-    <li className="mb-4 grid grid-cols-4 items-start gap-4 rounded-2xl border border-purple-100 bg-white/80 p-5 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-lg dark:border-white/10 dark:bg-white/5 dark:text-slate-100 md:items-center">
+    <li className="mb-4 grid grid-cols-4 items-start gap-4 rounded-2xl border border-purple-100 bg-white/80 p-5 shadow-xs transition duration-300 hover:-translate-y-0.5 hover:shadow-lg md:items-center dark:border-white/10 dark:bg-white/5 dark:text-slate-100">
       <div className="col-span-1">
         <img
           src={`images/${image}`}

@@ -1,27 +1,51 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-:root {
-  color-scheme: light;
+@custom-variant dark (&:is(.dark *));
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-.dark {
-  color-scheme: dark;
+@utility text-balance {
+  text-wrap: balance;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer utilities {
+  :root {
+    color-scheme: light;
+  }
 
-body {
-  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
-  text-rendering: optimizeLegibility;
-}
+  .dark {
+    color-scheme: dark;
+  }
 
-::selection {
-  background: #d8b4fe;
-  color: #3b0764;
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #d8b4fe;
+    color: #3b0764;
+  }
 }
 
 @layer base {
@@ -36,13 +60,7 @@ body {
   button,
   input,
   textarea {
-    @apply focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-purple-300/60;
-  }
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    @apply focus-visible:ring-4 focus-visible:ring-purple-300/60 focus-visible:outline-hidden;
   }
 }
 

@@ -22,10 +22,10 @@ export default function ContactPage() {
       <Section>
         <>
           <div className="mb-14 text-center">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.2em] text-purple-600 dark:text-purple-300">
+            <p className="mb-3 text-sm font-bold tracking-[0.2em] text-purple-600 uppercase dark:text-purple-300">
               Say hello
             </p>
-            <h2 className="text-balance text-5xl font-black sm:text-6xl">
+            <h2 className="text-5xl font-black text-balance sm:text-6xl">
               Let’s make something cool.
             </h2>
           </div>
@@ -40,7 +40,7 @@ export default function ContactPage() {
               <ContactForm />
             </div>
             <div className="col-span-1">
-              <div className="flex flex-col gap-5 rounded-[2rem] border border-purple-100 bg-white/80 p-7 shadow-lg dark:border-white/10 dark:bg-white/5">
+              <div className="flex flex-col gap-5 rounded-4xl border border-purple-100 bg-white/80 p-7 shadow-lg dark:border-white/10 dark:bg-white/5">
                 <IconLink href="mailto:todd@toddgoates.com">
                   <EnvelopeIcon /> todd@toddgoates.com
                 </IconLink>

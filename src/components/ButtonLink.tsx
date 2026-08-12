@@ -24,7 +24,7 @@ export default function ButtonLink({
       {external ? (
         <a
           href={href}
-          className={`inline-flex rounded-full border-2 border-orange-500 px-6 py-3 text-base font-bold shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+          className={`inline-flex rounded-full border-2 border-orange-500 px-6 py-3 text-base font-bold shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
             outlined
               ? "text-orange-500 hover:border-orange-600 hover:text-orange-600 dark:border-orange-400 dark:bg-transparent dark:text-orange-400 dark:hover:border-orange-300 dark:hover:text-orange-300"
               : "bg-orange-500 text-white hover:bg-orange-600 dark:border-orange-400 dark:bg-orange-300 dark:text-gray-800 dark:hover:bg-orange-400"
@@ -38,7 +38,7 @@ export default function ButtonLink({
         <Link
           href={href}
           prefetch={prefetch}
-          className={`inline-flex rounded-full border-2 border-orange-500 px-6 py-3 text-base font-bold shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+          className={`inline-flex rounded-full border-2 border-orange-500 px-6 py-3 text-base font-bold shadow-xs transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
             outlined
               ? "text-orange-500 hover:border-orange-600 hover:text-orange-600 dark:border-orange-400 dark:bg-transparent dark:text-orange-400 dark:hover:border-orange-300 dark:hover:text-orange-300"
               : "bg-orange-500 text-white hover:bg-orange-600 dark:border-orange-400 dark:bg-orange-300 dark:text-gray-800 dark:hover:bg-orange-400"

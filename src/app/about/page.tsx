@@ -22,7 +22,7 @@ export default function AboutPage() {
     <>
       <Section>
         <>
-          <h2 className="mb-8 text-5xl font-black dark:text-white sm:hidden">
+          <h2 className="mb-8 text-5xl font-black sm:hidden dark:text-white">
             All about me
           </h2>
           <div className="flex flex-col md:flex-row md:gap-8">
@@ -30,11 +30,11 @@ export default function AboutPage() {
               <img
                 src="images/portrait.jpg"
                 alt="A professional headshot of Todd Goates: a dark-haired, caucasian male in his early thirties"
-                className="mb-8 h-auto w-full max-w-72 -rotate-2 rounded-[2rem] border border-purple-100 bg-white p-2 shadow-[0_24px_60px_-24px_rgba(88,28,135,.5)] transition-transform duration-300 hover:rotate-0 dark:border-white/10 dark:bg-white/5 md:mr-10"
+                className="mb-8 h-auto w-full max-w-72 -rotate-2 rounded-4xl border border-purple-100 bg-white p-2 shadow-[0_24px_60px_-24px_rgba(88,28,135,.5)] transition-transform duration-300 hover:rotate-0 md:mr-10 dark:border-white/10 dark:bg-white/5"
               />
             </div>
             <div>
-              <h2 className="mb-3 hidden text-sm font-bold uppercase tracking-[0.2em] text-purple-600 dark:text-purple-300 sm:block">
+              <h2 className="mb-3 hidden text-sm font-bold tracking-[0.2em] text-purple-600 uppercase sm:block dark:text-purple-300">
                 A little background
               </h2>
               <h2 className="mb-8 hidden text-5xl font-black sm:block">
@@ -67,7 +67,7 @@ export default function AboutPage() {
       </Section>
 
       <Section
-        background="bg-gradient-to-br from-purple-700 via-purple-600 to-fuchsia-600"
+        background="bg-linear-to-br from-purple-700 via-purple-600 to-fuchsia-600"
         color="text-white"
       >
         <>
