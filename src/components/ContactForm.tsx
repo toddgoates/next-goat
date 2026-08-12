@@ -15,6 +15,11 @@ import { sendMessage } from "@/lib/actions";
 export default function ContactForm() {
   const [state, formAction] = useActionState(sendMessage, null);
   const { pending } = useFormStatus();
+  const [formValues, setFormValues] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [turnstileStatus, setTurnstileStatus] = useState<
     "success" | "error" | "expired" | "required"
   >("required");
@@ -31,7 +36,17 @@ export default function ContactForm() {
         <div className="sm:flex sm:gap-8">
           <div className="w-full">
             <Label htmlFor="name">What's your name?</Label>
-            <Input name="name" required />
+            <Input
+              name="name"
+              value={formValues.name}
+              onChange={(event) =>
+                setFormValues((values) => ({
+                  ...values,
+                  name: event.target.value,
+                }))
+              }
+              required
+            />
             {state?.error?.name ? (
               <InputError message={state.error.name} />
             ) : (
@@ -40,7 +55,18 @@ export default function ContactForm() {
           </div>
           <div className="w-full">
             <Label htmlFor="email">What's your email?</Label>
-            <Input type="email" name="email" required />
+            <Input
+              type="email"
+              name="email"
+              value={formValues.email}
+              onChange={(event) =>
+                setFormValues((values) => ({
+                  ...values,
+                  email: event.target.value,
+                }))
+              }
+              required
+            />
             {state?.error?.email ? (
               <InputError message={state.error.email} />
             ) : (
@@ -56,7 +82,17 @@ export default function ContactForm() {
         </div>
         <div>
           <Label htmlFor="message">What would you like to say?</Label>
-          <Textarea name="message" required></Textarea>
+          <Textarea
+            name="message"
+            value={formValues.message}
+            onChange={(event) =>
+              setFormValues((values) => ({
+                ...values,
+                message: event.target.value,
+              }))
+            }
+            required
+          />
           {state?.error?.message ? (
             <InputError message={state.error.message} />
           ) : (

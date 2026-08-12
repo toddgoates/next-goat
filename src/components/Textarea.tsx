@@ -10,7 +10,8 @@ export default function Textarea({
   textareaClass = "",
   rows = 10,
   required = false,
-}: TextareaProps) {
+  ...props
+}: TextareaProps & React.TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <textarea
       name={name}
@@ -18,6 +19,7 @@ export default function Textarea({
       className={`w-full rounded-2xl border border-purple-100 bg-white px-4 py-3.5 shadow-xs transition placeholder:text-slate-400 hover:border-purple-200 focus:border-purple-400 dark:border-white/10 dark:bg-white/5 ${textareaClass}`}
       rows={rows}
       required={required}
-    ></textarea>
+      {...props}
+    />
   );
 }
