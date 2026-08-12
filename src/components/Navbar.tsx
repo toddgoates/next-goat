@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
@@ -9,15 +9,17 @@ import { GoSun as SunIcon, GoMoon as MoonIcon } from "react-icons/go";
 
 import Container from "./Container";
 
+const emptySubscribe = () => () => {};
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [mounted, setMounted] = useState(false);
+  const mounted = useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
   const pathName = usePathname();
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   return (
     <nav className="relative z-50 border-b border-purple-100/80 bg-white/85 backdrop-blur-xl dark:border-white/10 dark:bg-[#211b31]/85">

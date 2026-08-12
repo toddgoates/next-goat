@@ -1,5 +1,5 @@
 type ContainerProps = {
-  children: JSX.Element;
+  children: React.ReactNode;
   extraSpace?: boolean;
 };
 

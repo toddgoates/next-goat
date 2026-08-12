@@ -1,7 +1,7 @@
 "use client";
 
-import { useFormState, useFormStatus } from "react-dom";
-import { useState } from "react";
+import { useActionState, useState } from "react";
+import { useFormStatus } from "react-dom";
 import { Turnstile } from "next-turnstile";
 
 import Alert from "./Alert";
@@ -13,7 +13,7 @@ import InputError from "./InputError";
 import { sendMessage } from "@/lib/actions";
 
 export default function ContactForm() {
-  const [state, formAction] = useFormState(sendMessage, null);
+  const [state, formAction] = useActionState(sendMessage, null);
   const { pending } = useFormStatus();
   const [turnstileStatus, setTurnstileStatus] = useState<
     "success" | "error" | "expired" | "required"
